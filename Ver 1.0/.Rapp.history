@@ -1,0 +1,567 @@
+d = as.vector(a, byrow = F)
+d = as.vector(t(a))
+d
+outer(d,d)
+e = rep(1,3)
+e
+e%*%t(e)
+as.numeric(e%*%t(e)0
+as.numeric(e%*%t(e))
+e = array(1,c(1,1,10))
+e
+e1 = e[,,1]
+e1
+e1%*%t(e1)
+cost = 0
+cost[1] = 90
+cost
+//
+""""
+""""""
+A = matrix(c(0,-1,1,1),ncol=2)
+A
+eigen(A)
+sqrt(3)/2
+library(pracma)
+f = function(x,y) { x^2 - y^2}
+vectorfield(f,c(-1,1),y=c(-1,1))
+vectorfield(f,c(-2,2),y=c(-2,2))
+vectorfield(f,c(-2,2),y=c(-2,2), scale=0.5)
+vectorfield(f,c(-2,2),y=c(-2,2))
+v
+v = vectorfield(f,c(-2,2),y=c(-2,2))
+v
+str(v)
+for (xs in seq(-1, 1, by = 0.25)) {#
+sol <- rk4(f, -1, 1, xs, 100)#
+lines(sol$x, sol$y, col="darkgreen")#
+}#
+grid()
+vectorfield(f,c(-2,2),y=c(-2,2))
+vectorfield(f,c(-10,10),y=c(-10,10))
+f
+f=function(x,y) { x^2 + y^2}
+vectorfield(f,c(-10,10),y=c(-10,10))
+vectorfield(f,c(-2,2),y=c(-2,2))
+f=function(x,y) { x + y}
+vectorfield(f,c(-2,2),y=c(-2,2))
+f=function(x,y) { x}
+vectorfield(f,c(-2,2),y=c(-2,2))
+vectorfield
+f=function(x,y) { x*exp(-(x^2 + y^2))}
+f(0,0)
+f(1,1)
+vectorfield(f,c(-2,2),y=c(-2,2))
+vectorfield(f,c(-2,2),y=c(-2,2), n=32)
+vectorfield(f,c(-2,2),y=c(-2,2), n=10)
+vectorfield(f,c(-2,2),y=c(-2,2), n=10, scale=0.1)
+vectorfield(f,c(-2,2),y=c(-2,2), n=20, scale=0.1)
+f=function(x,y) {y}
+vectorfield(f,c(-2,2),y=c(-2,2), n=20, scale=0.1)
+vectorfield(f,c(-10,10),y=c(-10,10), n=20, scale=0.1)
+vectorfield(f,c(-0.10,0.1),y=c(-0.1,0.1), n=20, scale=0.1)
+vectorfield(f,c(-0.10,0.1),y=c(-0.1,0.1), n=20)
+vectorfield(f,c(-0.10,0.1),y=c(-0.1,0.1))
+vectorfield(f,c(-0.10,0.1),y=c(-0.1,0.1), scale = 0.01)
+f=function(x,y) {c(x,y)}
+vectorfield(f,c(-0.10,0.1),y=c(-0.1,0.1), scale = 0.01)
+arrows(0,0,0.1,0.1)
+arrows(0,0,0.01,0.01)
+arrows(0,0,0.01,0.01, code=1)
+arrows(0,0,0.01,-0.01, code=3)
+arrows(0,0,0.02,-0.02, code=4)
+arrows(0,0,0.02,-0.02, code=3)
+arrows(0,0,-0.02,-0.02, code=3)
+arrows(0,0,-0.02,-0.02, code=2, length = 1)
+arrows(0,0,-0.02,-0.02, code=2, length = 0.1)
+arrows(0,0,-0.05,0.05, code=2, length = 0.1)
+quiver(0,0,1,1)
+x= seq(-1,1,by=0.1)
+y= seq(-1,1,by=0.1)
+X = meshgrid(x)
+str(X)
+quiver(X$X,X$Y,1,1)
+plot()
+vectorfield(f,c(-2,2),y=c(-2,2), n=20, scale=0.1)
+quiver(X$X,X$Y,1,1)
+vectorfield(f,c(-2,2),y=c(-2,2), n=20, scale=0.1)
+quiver(X$X,X$Y,1,0)
+WCequilib = function(E, K=20, M=100, s=30){#
+	 y = M*((1.5*E)^2)/(sig^2 + (1.5*E)^2) - 1.6*E - K + sig*sqrt(E/(M-E));#
+}
+dSdx = function(E,a, M =100, s=30){#
+	ss = s^2#
+	aa = a^2#
+	2*M*ss*aa*x/(ss+aa*x^2)#
+}#
+#
+WCequilib = function(E, K=20, M=100, sig=30){#
+	 y = M*((1.5*E)^2)/(sig^2 + (1.5*E)^2) - 1.6*E - K + sig*sqrt(E/(M-E));#
+}
+library(pracma)
+fzero(WCequilib,10)
+E = fzero(WCequilib, 10)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)
+E
+I
+A = matrix(0, c(2,2))
+A
+A = array(0, c(2,2))
+A
+dSdx = function(E,a, M =100, s=30){#
+	ss = s^2#
+	aa = a^2#
+	2*M*ss*aa*E/(ss+aa*E^2)#
+}
+Te = 5
+Ti = 10
+WCequilib = function(E, K=20, M=100, sig=30){#
+	 y = M*((1.5*E)^2)/(sig^2 + (1.5*E)^2) - 1.6*E - K + sig*sqrt(E/(M-E));#
+}#
+#
+E = fzero(WCequilib, 10)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)
+E
+I
+A[1,1] = (1/Te)*(-1 + dSdx(E,1.6))#
+A[1,2] = (1/Te)*dSdx(I,-1)#
+A[2,1] = (1/Ti)*dSdx(E,1.5)#
+A[2,2] = (1/Ti)*(-1 + dSdx(I,0))
+A
+eigen(A)
+A
+(1/Ti)
+dSdx(E,1.5
+)
+dSdx = function(E,a, M =100, s=30){#
+	ss = s^2#
+	aa = a^2#
+	2*M*ss*aa*E/(ss+aa*E^2)^2#
+}
+A = array(0, c(2,2))#
+#
+A[1,1] = (1/Te)*(-1 + dSdx(E,1.6))#
+A[1,2] = (1/Te)*dSdx(I,-1)#
+A[2,1] = (1/Ti)*dSdx(E,1.5)#
+A[2,2] = (1/Ti)*(-1 + dSdx(I,0))
+A
+dSdx(E,1.5)
+A[1,1] = (1/Te)*(-1 + dSdx(1.6*E-I+20,1))
+A
+A[1,1] = (1/Te)*(-1 + 1.6*dSdx(1.6*E-I+20,1))
+A
+dSdx(E,1.5)
+dSdx(E)*1.5
+dSdx(E,1)*1.5
+dSdx(1.5*E,1)*1.5
+A[1,1] = (1/Te)*(-1 + 1.6*dSdx(1.6*E-I+20,1))
+A
+A[1,2] = (1/Te)*-1*dSdx(1.6*E-I+20,1)
+A
+eigen(A)
+E = fzero(WCequilib, 10, K=10)$x
+E
+WCequilib = function(E, K=10, M=100, sig=30){#
+	 y = M*((1.5*E)^2)/(sig^2 + (1.5*E)^2) - 1.6*E - K + sig*sqrt(E/(M-E));#
+}
+E = fzero(WCequilib, 10)$x
+E
+E = fzero(WCequilib, 10, K=10)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+K = 10
+E
+I
+E = fzero(WCequilib, 10, K=20)$x
+E
+WCequilib = function(E, K=20, M=100, sig=30){#
+	 y = M*((1.5*E)^2)/(sig^2 + (1.5*E)^2) - 1.6*E - K + sig*sqrt(E/(M-E));#
+}
+E = fzero(WCequilib, 10, K=10)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+K = 10
+E
+I
+K
+A = array(0, c(2,2))#
+A[1,1] = (1/Te)*(-1 + 1.6*dSdx(1.6*E-I+K,1))#
+A[1,2] = (1/Te)*-1*dSdx(1.6*E-I+K,1)#
+A[2,1] = (1/Ti)*1.5*dSdx(1.5*E,1)#
+A[2,2] = (1/Ti)*(-1 + 0*dSdx(0*I,1))
+A
+E = fzero(WCequilib, 10, K=20)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+K = 20#
+#
+A = array(0, c(2,2))#
+A[1,1] = (1/Te)*(-1 + 1.6*dSdx(1.6*E-I+K,1))#
+A[1,2] = (1/Te)*-1*dSdx(1.6*E-I+K,1)#
+A[2,1] = (1/Ti)*1.5*dSdx(1.5*E,1)#
+A[2,2] = (1/Ti)*(-1 + 0*dSdx(0*I,1))
+A
+E = fzero(WCequilib, 10, K=10)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+K = 10#
+#
+A = array(0, c(2,2))#
+A[1,1] = (1/Te)*(-1 + 1.6*dSdx(1.6*E-I+K,1))#
+A[1,2] = (1/Te)*-1*dSdx(1.6*E-I+K,1)#
+A[2,1] = (1/Ti)*1.5*dSdx(1.5*E,1)#
+A[2,2] = (1/Ti)*(-1 + 0*dSdx(0*I,1))
+A
+eigen(A)
+E = fzero(WCequilib, 10, K=1)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+K = 1#
+#
+A = array(0, c(2,2))#
+A[1,1] = (1/Te)*(-1 + 1.6*dSdx(1.6*E-I+K,1))#
+A[1,2] = (1/Te)*-1*dSdx(1.6*E-I+K,1)#
+A[2,1] = (1/Ti)*1.5*dSdx(1.5*E,1)#
+A[2,2] = (1/Ti)*(-1 + 0*dSdx(0*I,1))
+E = fzero(WCequilib, 0, K=1)$x
+E = fzero(WCequilib, 0, K=1)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+K = 1
+E
+K
+I
+E = fzero(WCequilib, 0, K=1)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+K = 1#
+#
+A = array(0, c(2,2))#
+A[1,1] = (1/Te)*(-1 + 1.6*dSdx(1.6*E-I+K,1))#
+A[1,2] = (1/Te)*-1*dSdx(1.6*E-I+K,1)#
+A[2,1] = (1/Ti)*1.5*dSdx(1.5*E,1)#
+A[2,2] = (1/Ti)*(-1 + 0*dSdx(0*I,1))
+A
+eigen(A)
+E = fzero(WCequilib, 0, K=0.1)$x
+E = fzero(WCequilib, 0, K=0.1)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+K = 0.1
+E
+I
+A = array(0, c(2,2))#
+A[1,1] = (1/Te)*(-1 + 1.6*dSdx(1.6*E-I+K,1))#
+A[1,2] = (1/Te)*-1*dSdx(1.6*E-I+K,1)#
+A[2,1] = (1/Ti)*1.5*dSdx(1.5*E,1)#
+A[2,2] = (1/Ti)*(-1 + 0*dSdx(0*I,1))
+eigen(A)
+library(pracma)
+f = function(x){ x^3 - 116*x^2 + 1680*x -6400}
+fzero(f,5)
+A = matrix(c(-0.1,0,0,0.4,-0.1,0,0.4,0,-0.1), ncol=3)
+A
+eigen(A)
+A
+A[1,]
+A[1,-1]
+A[1,-1] = A[1,-1]*(-5)
+A
+eigen(A)
+e
+e = fzero(f,6)
+e
+e = fzero(f,6)$x
+e
+80-10*e
+Sx = function(x){ 200*(40^2) * x/(40^2 + x^2)^2}
+Sx(80)
+Sx(80-10*e)
+Sx(80-10*e)/2
+A
+A[1,2]=A[1,3]=A[2,3] = Sx(80-10*e)
+A
+A[1,2]=A[1,3]=A[2,3] = -Sx(80-10*e)
+A
+A = (A + t(A))/2
+A
+eigen(A)
+dSdx = function(E,a, M =100, s=30){#
+	ss = s^2#
+	aa = a^2#
+	2*M*ss*aa*E/(ss+aa*E^2)^2#
+}#
+#
+WCequilib = function(E, K=20, M=100, sig=30){#
+	 y = M*((1.5*E)^2)/(sig^2 + (1.5*E)^2) - 1.6*E - K + sig*sqrt(E/(M-E));#
+}
+E = fzero(WCequilib, 0, K=0.1)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+K = 0.1
+A = array(0, c(2,2))#
+A[1,1] = (1/Te)*(-1 + 1.6*dSdx(1.6*E-I+K,1))#
+A[1,2] = (1/Te)*-1*dSdx(1.6*E-I+K,1)#
+A[2,1] = (1/Ti)*1.5*dSdx(1.5*E,1)#
+A[2,2] = (1/Ti)*(-1 + 0*dSdx(0*I,1))
+E = fzero(WCequilib, 0, K=0.1)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+K = 0.1#
+Ti = 10#
+Te = 5#
+#
+A = array(0, c(2,2))#
+A[1,1] = (1/Te)*(-1 + 1.6*dSdx(1.6*E-I+K,1))#
+A[1,2] = (1/Te)*-1*dSdx(1.6*E-I+K,1)#
+A[2,1] = (1/Ti)*1.5*dSdx(1.5*E,1)#
+A[2,2] = (1/Ti)*(-1 + 0*dSdx(0*I,1))#
+#
+eigen(A)$values
+K=10#
+E = fzero(WCequilib, 0, K=K)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+Ti = 10#
+Te = 5#
+#
+A = array(0, c(2,2))#
+A[1,1] = (1/Te)*(-1 + 1.6*dSdx(1.6*E-I+K,1))#
+A[1,2] = (1/Te)*-1*dSdx(1.6*E-I+K,1)#
+A[2,1] = (1/Ti)*1.5*dSdx(1.5*E,1)#
+A[2,2] = (1/Ti)*(-1 + 0*dSdx(0*I,1))#
+#
+eigen(A)$values
+K=20#
+E = fzero(WCequilib, 0, K=K)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+Ti = 10#
+Te = 5#
+#
+A = array(0, c(2,2))#
+A[1,1] = (1/Te)*(-1 + 1.6*dSdx(1.6*E-I+K,1))#
+A[1,2] = (1/Te)*-1*dSdx(1.6*E-I+K,1)#
+A[2,1] = (1/Ti)*1.5*dSdx(1.5*E,1)#
+A[2,2] = (1/Ti)*(-1 + 0*dSdx(0*I,1))#
+#
+eigen(A)$values
+K=300#
+E = fzero(WCequilib, 0, K=K)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+Ti = 10#
+Te = 5#
+#
+A = array(0, c(2,2))#
+A[1,1] = (1/Te)*(-1 + 1.6*dSdx(1.6*E-I+K,1))#
+A[1,2] = (1/Te)*-1*dSdx(1.6*E-I+K,1)#
+A[2,1] = (1/Ti)*1.5*dSdx(1.5*E,1)#
+A[2,2] = (1/Ti)*(-1 + 0*dSdx(0*I,1))#
+#
+eigen(A)$values
+K=10#
+E = fzero(WCequilib, 0, K=10)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+Ti = 10#
+Te = 5#
+#
+A = array(0, c(2,2))#
+A[1,1] = (1/Te)*(-1 + 1.6*dSdx(1.6*E-I+K,1))#
+A[1,2] = (1/Te)*-1*dSdx(1.6*E-I+K,1)#
+A[2,1] = (1/Ti)*1.5*dSdx(1.5*E,1)#
+A[2,2] = (1/Ti)*(-1 + 0*dSdx(0*I,1))#
+#
+eigen(A)$values
+K=10#
+E = fzero(WCequilib, 0, K=10)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+Te = 10#
+Ti = 5#
+#
+A = array(0, c(2,2))#
+A[1,1] = (1/Te)*(-1 + 1.6*dSdx(1.6*E-I+K,1))#
+A[1,2] = (1/Te)*-1*dSdx(1.6*E-I+K,1)#
+A[2,1] = (1/Ti)*1.5*dSdx(1.5*E,1)#
+A[2,2] = (1/Ti)*(-1 + 0*dSdx(0*I,1))#
+#
+eigen(A)$values
+K=10#
+E = fzero(WCequilib, 0, K=10)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+Te = 10#
+Ti = 5
+K=10#
+E = fzero(WCequilib, 1, K=10)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+Te = 10#
+Ti = 5
+K=10
+E = fzero(WCequilib, 10, K=10)$x
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)
+Te = 5
+Ti = 10
+A = array(0, c(2,2))#
+A[1,1] = (1/Te)*(-1 + 1.6*dSdx(1.6*E-I+K,1))#
+A[1,2] = (1/Te)*-1*dSdx(1.6*E-I+K,1)#
+A[2,1] = (1/Ti)*1.5*dSdx(1.5*E,1)#
+A[2,2] = (1/Ti)*(-1 + 0*dSdx(0*I,1))
+A
+eigen(A)$values
+K=0.1#
+E = fzero(WCequilib, 10, K=0.1)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+Te = 5#
+Ti = 10
+K=0.1#
+E = fzero(WCequilib, 1, K=0.1)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+Te = 5#
+Ti = 10
+A = array(0, c(2,2))#
+A[1,1] = (1/Te)*(-1 + 1.6*dSdx(1.6*E-I+K,1))#
+A[1,2] = (1/Te)*-1*dSdx(1.6*E-I+K,1)#
+A[2,1] = (1/Ti)*1.5*dSdx(1.5*E,1)#
+A[2,2] = (1/Ti)*(-1 + 0*dSdx(0*I,1))#
+#
+eigen(A)$values
+K=0.1#
+E = fzero(WCequilib, 0, K=0.1)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+Te = 5#
+Ti = 10#
+#
+A = array(0, c(2,2))#
+A[1,1] = (1/Te)*(-1 + 1.6*dSdx(1.6*E-I+K,1))#
+A[1,2] = (1/Te)*-1*dSdx(1.6*E-I+K,1)#
+A[2,1] = (1/Ti)*1.5*dSdx(1.5*E,1)#
+A[2,2] = (1/Ti)*(-1 + 0*dSdx(0*I,1))#
+#
+eigen(A)$values
+K=10
+E = fzero(WCequilib, 10, K=K)$x
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)
+Te = 5
+Ti = 10
+A = array(0, c(2,2))#
+A[1,1] = (1/Te)*(-1 + 1.6*dSdx(1.6*E-I+K,1))#
+A[1,2] = (1/Te)*-1*dSdx(1.6*E-I+K,1)#
+A[2,1] = (1/Ti)*1.5*dSdx(1.5*E,1)#
+A[2,2] = (1/Ti)*(-1 + 0*dSdx(0*I,1))#
+#
+eigen(A)$values
+K=10#
+E = fzero(WCequilib, K, K=K)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+Te = 5#
+Ti = 10
+K=0.1#
+E = fzero(WCequilib, K, K=K)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+Te = 5#
+Ti = 10
+E = fzero(WCequilib, K, K=K)$x
+E = fzero(WCequilib, 1, K=K)$x
+E
+E = fzero(WCequilib, 0, K=K)$x
+E
+E = fzero(WCequilib, 0.1, K=K)$x
+E = fzero(WCequilib, 0.001, K=K)$x
+K=0.1#
+E = fzero(WCequilib, as.integer(K), K=K)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+Te = 5#
+Ti = 10
+K=20#
+E = fzero(WCequilib, as.integer(K), K=K)$x#
+I = 100*(1.5*E)^2/(30^2 + (1.5*E)^2)#
+Te = 5#
+Ti = 10
+## Iterative lqg#
+setwd("Documents/Acads/FireflyProject-master/R codes/My")#
+source("newton.R")#
+source("kalman_lqg.R")#
+source("sys_dynamics.R")#
+source("linearize.R")#
+source("lqr.R")#
+#
+run = function(maxIter=100){#
+	## initialize a trajectory#
+	u_ = array(0,c(nu,N-1))#
+	x_ = array(0,c(nx,N))#
+	for(i in 1:nx){#
+	    x_[i,] = seq(x0[i],xf[i], length = N)#
+	}#
+	for(k in 1:(N-1)){#
+	    xdot = (x_[,k+1]-x_[,k])/dt#
+	    u_[,k] = root2(f,xdot,x0=c(1,1), x=x_[,k])#
+	}#
+	## for checking if controls above create the trajectory#
+	#x_[,1] = x0#
+	#for(k in 1:(N-1)){#
+	    #xdot = (x_[,k+1]-x_[,k])/dt#
+	    #u_[,k] = root2(f,xdot,x0=c(1,1), x=x_[,k])#
+	 #   x_[,(k+1)] = x_[,k] + f(x_[,k],u_[,k])*dt#
+	#}#
+	init_x = x_; init_u = u_;#
+	init_cost = prev_cost = compute_cost(x_,u_)  ## initial cost#
+	print(paste("initial cost = ", init_cost))#
+	sys = linearize(x_,u_,f,g,h,l)  # linearize around initial nominal trajectory#
+	init_sys = sys ## why is this needed?#
+	iter = 1#
+	#maxIter = 100#
+	converged = F#
+	while(!converged){#
+	    prev_cost = compute_cost(x_,u_)#
+	    sys = linearize(x_,u_,f,g,h,l)  ## linearize around initial nominal trajectory#
+	    #gains = kalman_lqg(sys) ## find gains#
+	    #K = gains$K; L = gains$L#
+	    L = lqr(sys)#
+	    ## line search to find control deviations (du)#
+	    line_search = T#
+	    alp = 1#
+	    while(line_search){#
+	        dx = array(0,c(nx,N))#
+	        du = array(0,c(nu,N-1))#
+	        u = array(0,c(nu,N-1))#
+	        x = array(0,c(nx,N))#
+	        x[,1] = x0#
+	        for(k in 1:(N-1)){#
+	            ## apply line search#
+	            du[,k] = -L[1:nu,1:nx,k]%*% dx[,k] - alp*L[1:nu,nx+1,k]#
+	            dx[,k+1] = sys$A[1:nx,1:nx,k]%*%dx[,k] + sys$B[1:nx,1:nu,k]%*%du[,k]#
+	            u[,k] = u_[,k] + du[1:nu,k]#
+	            x[,k+1] = x[,k] + f(x[,k],u[,k])*dt#
+	        }#
+	        cost = compute_cost(x,u)#
+	        if(cost>prev_cost){#
+	            #line_search = T#
+	            alp = 0.9*alp#
+	        } else{#
+	            line_search = F#
+	        }#
+	    }#
+	    ## line search minimizes cost w.r.t previous iteration#
+	    cost = compute_cost(x,u)#
+	    print(paste("iter", iter, ": cost =",cost))#
+	    ## repeat until convergence#
+	    ## convergence criteria: u_ doesn't change much or max iters#
+	    ## norm(u-u_) < eps |#
+	    if(iter >= maxIter | abs(cost-prev_cost)<1e-6){#
+	        converged = T#
+	    }#
+	    ## set new nominal trajectory to the updated one#
+	    ## before entering new iteration or exiting iterations#
+	    x_ = x#
+	    u_ = u#
+	    iter = iter + 1#
+	    ## while looping again, need to linearize along new trajectory#
+	}#
+	plot(t(x_), type='o', xlim =c(0,4), ylim = c(0,4)); grid()#
+	par(new=T); plot(t(init_x), type='o', col=2, xlim =c(0,4), ylim = c(0,4))#
+	list(x_, u_)#
+}
+run(200)
+M
+N
+dt
+N = 150
+run(200)
+N
+N =50
+run(200)
+run(200)
+R
+R[2,2] = 10
+run(200)
+R[2,2] = 100
+run(200)
+R[2,2] = 2
+run(200)
