@@ -42,7 +42,7 @@ G = function(x,u){
     H = matrix(0, ncol=nx, nrow=ny)
     H[,4:5] = diag(2)
     ## noise in observation
-    # dim = ny x nv , we use nv = ny 
+    # dim = ny x nv , we use nv = ny
     D0 = s*0.01*(diag(ny)) + 0.00*diag(H%*%x)
     D0
 }
@@ -63,30 +63,30 @@ h = function(x) {
 }
 
 compute_cost = function(x_,u_){
-    N = dim(x_)[2]
-    cost = h(x_[,N])
-    for(k in 1:(N-1)){
-        cost = cost + l(x_[,k],u_[,k])*dt
-    }
-    cost
+  N = dim(x_)[2]
+  cost = h(x_[,N])
+  for(k in 1:(N-1)){
+    cost = cost + l(x_[,k],u_[,k])*dt
+  }
+  cost
 }
 
 control_cost = function(u_){
-    N = dim(u_)[2] + 1
+  N = dim(u_)[2] + 1
 	cost = 0
 	for(k in 1:(N-1)){
-        cost = cost + (t(u_[,k]%*%R%*%u_[,k]))*dt
-    }
-    cost
+      cost = cost + (t(u_[,k]%*%R%*%u_[,k]))*dt
+  }
+  cost
 }
 
 state_cost = function(x_){
-    N = dim(x_)[2]
+  N = dim(x_)[2]
 	cost = h(x_[,N])
 	for(k in 1:(N-1)){
-        cost = cost + (t(x_[,k]%*%Q%*%x_[,k]))*dt
-    }
-    cost
+      cost = cost + (t(x_[,k]%*%Q%*%x_[,k]))*dt
+  }
+  cost
 }
 ###########################
 
